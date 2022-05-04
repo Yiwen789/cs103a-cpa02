@@ -38,8 +38,17 @@
                   
                   <p style="color: DarkOrange; font-weight: 900">STORE: <%= coupon['company'] %> </p>
                   <p style="font-weight: 600;"><%= coupon['discount'] %> OFF <%= coupon['coupon']%></p>
-                  <p style="color: gray; font-weight: 200"> Expiration: <%= coupon['expiration'] %> </p>         
-                  <button type="button" class="btn btn-info">Add</button>         
+                  <p style="color: gray; font-weight: 200"> Expiration: <%= coupon['expiration'] %> </p>    
+                  <!-- <form method="get" action="/home/add/<%coupon%>" > -->
+                    <a href="/home/add/<%= coupon['id']%>">
+                      <button type="submit" class="btn btn-info" >Add</button>  
+                    </a>
+                    
+                    <!-- <input type="submit" class="btn btn-md btn-danger" value="hi" name="hi">
+                    <input type="text" name="newID" placeholder="Enter your ID"/>
+                    <input type="submit" value="Click here to submit the form"/> -->
+                  <!-- </form>      -->
+                         
               </div>
               <% } %>
           </div> 

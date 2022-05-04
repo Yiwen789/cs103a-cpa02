@@ -7,6 +7,7 @@ var couponSchema = Schema( {
     coupon: String,
     discount: String,
     expiration: String,
+    saved: String,
 } );
 
 module.exports = mongoose.model( 'Coupon', couponSchema );

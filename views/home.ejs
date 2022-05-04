@@ -35,6 +35,19 @@
             <p>Valid</p>
             <div class="border border-1 border-info">
               <br>
+              <div class="d-flex flex-wrap">
+                <% for (coupon of saved_coupons) {   
+                    %>
+              
+                    <div class="p-3 m-3 col-2 bg-lights w-15 border border-primary border-5">
+                        
+                        <p style="color: DarkOrange; font-weight: 900">STORE: <%= coupon['company'] %> </p>
+                        <p style="font-weight: 600;"><%= coupon['discount'] %> OFF <%= coupon['coupon']%></p>
+                        <p style="color: gray; font-weight: 200"> Expiration: <%= coupon['expiration'] %> </p>         
+                        <button type="button" class="btn btn-info">Add</button>         
+                    </div>
+                    <% } %>
+              </div> 
               <br>
             </div>
             <p>Expired</p>

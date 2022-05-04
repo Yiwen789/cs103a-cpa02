@@ -40,13 +40,16 @@ const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {console.log("we are connected!!!")});
 
-app.get('/', (req, res) => {
+app.get('/', async(req, res) => {
+  const saved_coupons = await Coupon.find({saved: "true"});
+  // console.log(saved_coupons);
+  res.locals.saved_coupons = saved_coupons;
   res.render("home.ejs");
 })
 
 app.get('/stores', async(req, res, next) => {
     try{
-      console.log("hi");
+      // console.log("hi");
       // const companies = await Company.find();  // get the user's id
 
       const list = ["Hold Food",
@@ -55,7 +58,7 @@ app.get('/stores', async(req, res, next) => {
 
       
       res.locals.companies = list;
-      console.log(res.locals.companies);
+      // console.log(res.locals.companies);
 
       // console.log(companies_data);
       // console.log(companies);
@@ -88,6 +91,22 @@ app.get('/coupons/:storeName', async(req, res, next) => {
     next(e);
   }
 }) 
+
+app.get('/home/add/:couponId', async(req, res, next) => {
+  try{
+    const couponId = req.params.couponId;
+    await Coupon.findOneAndUpdate({_id: couponId}, {saved: "true"})
+
+    // const newItem = await Coupon.find({coupon: couponId})
+    
+    const saved_coupons = await Coupon.find({saved: "true"})
+    res.locals.saved_coupons = saved_coupons;
+    // console.log(saved_coupons);
+    res.render('home.ejs');
+  } catch(e) {
+    next(e);
+  }
+})
 
 const port = "3000";
 app.set("port", port);
