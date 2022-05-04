@@ -14,6 +14,9 @@ const app = express()
 // *********************************************************** //
 const Company = require("./models/Company");
 const Coupon = require('./models/Coupon');
+let dotenv = require('dotenv').config();
+console.log(dotenv);
+
 
 // app settings
 app.set("views", path.join(__dirname, "views"));
@@ -28,7 +31,7 @@ app.set("view engine", "ejs");
 // Connecting Data
 const mongoose = require( 'mongoose' );
 // const mongodb_URI = 'mongodb://localhost:27017/myapp';
-const mongodb_URI = "mongodb+srv://luoy789:BrandeisSpr22@cosi103.ll4oj.mongodb.net/cpa02_coupon_launchpad?retryWrites=true&w=majority";
+const mongodb_URI = process.env.mongodb_URI;
 // const mongodb_URI = 'mongodb+srv://cs_sj:BrandeisSpr22@cluster0.kgugl.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 mongoose.connect( mongodb_URI);
