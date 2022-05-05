@@ -15,7 +15,7 @@ const app = express()
 const Company = require("./models/Company");
 const Coupon = require('./models/Coupon');
 let dotenv = require('dotenv').config();
-console.log(dotenv);
+// console.log(dotenv);
 
 
 // app settings
@@ -31,9 +31,9 @@ app.set("view engine", "ejs");
 // Connecting Data
 const mongoose = require( 'mongoose' );
 // const mongodb_URI = 'mongodb://localhost:27017/myapp';
-// const mongodb_URI = process.env.mongodb_URI;
+const mongodb_URI = process.env.mongodb_URI;
 
-const mongodb_URI = 'mongodb+srv://luoy789:BrandeisSpr22@cosi103.ll4oj.mongodb.net/cpa02_coupon_launchpad?retryWrites=true&w=majority;';
+// const mongodb_URI = "mongodb+srv://luoy789:<password>@cosi103.ll4oj.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
 
 mongoose.connect( mongodb_URI);
 // fix deprecation warnings
@@ -86,10 +86,10 @@ app.get('/coupons', async(req, res, next) => {
 app.get('/coupons/:storeName', async(req, res, next) => {
   try {
     const storeName = req.params.storeName;
-    console.log(req.params.storeName);
+    // console.log(req.params.storeName);
     const coupons = await Coupon.find({company: storeName})
     res.locals.coupons = coupons;
-    console.log(coupons);
+    // console.log(coupons);
     res.render("coupon.ejs");
   } catch(e) {
     next(e);
