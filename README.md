@@ -1,4 +1,7 @@
-# cs103a-cpa02 Coupon Launchpad
+# cs103a-cpa02 Coupon Launchpad 
+
+## Link
+https://infinite-basin-10642.herokuapp.com/
 
 ## Description
 
@@ -28,3 +31,4 @@ Node JS, MongoDB
 
 ## Movie Link
 
+https://github.com/Yiwen789/cs103a-cpa02.git
