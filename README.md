@@ -14,6 +14,13 @@ This project is currently in development... The beta version is currently availa
 ![alt text](https://github.com/Yiwen789/Habitat/blob/main/assets/demo2.png?raw=true)
 ![alt text](https://github.com/Yiwen789/Habitat/blob/main/assets/demo3.png?raw=true) -->
 
+Coupon collections on homepage
+![alt text](https://github.com/Yiwen789/cs103a-cpa02/blob/main/public/images/demo1.png?raw=true)
+Available Coupons
+![alt text](https://github.com/Yiwen789/cs103a-cpa02/blob/main/public/images/demo2.png?raw=true)
+Coupon by Stores
+![alt text](https://github.com/Yiwen789/cs103a-cpa02/blob/main/public/images/demo3.png?raw=true) 
+
 
 ## Developer Notes
 
