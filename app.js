@@ -7,7 +7,7 @@ const debug = require("debug")("personalapp:server");
 
 
 const app = express()
-// const port = 3000
+
 
 // *********************************************************** //
 //  Loading models
@@ -112,7 +112,9 @@ app.get('/home/add/:couponId', async(req, res, next) => {
   }
 })
 
-const port = "3000";
+// const port = "3000";
+const port = process.env.PORT || "3000";
+console.log('connecting on port '+port)
 app.set("port", port);
 
 // and now we startup the server listening on that port
