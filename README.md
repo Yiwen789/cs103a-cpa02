@@ -31,4 +31,4 @@ Node JS, MongoDB
 
 ## Movie Link
 
-https://github.com/Yiwen789/cs103a-cpa02.git
+https://drive.google.com/file/d/1B5xT9EwNREAg80KWaNSnc0vBOzuizKWb/view?usp=sharing
